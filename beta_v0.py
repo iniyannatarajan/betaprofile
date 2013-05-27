@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 
 import sys
-import os
 import pyfits as pf
 import numpy as np
 from optparse import OptionParser
@@ -26,7 +25,7 @@ def writeFITS(image):
 
 	hdu.header.update('CTYPE2',   'DEC--SIN')
 	hdu.header.update('CRVAL2',   dec)
-	hdu.header.update('CDELT2',   cdelt)
+	hdu.header.update('CDELT2',   -cdelt)
 	hdu.header.update('CROTA2',   0.000000000000E+00)
 	hdu.header.update('CRPIX2',   npix/2.)
 	hdu.header.update('CUNIT2',   'deg')
